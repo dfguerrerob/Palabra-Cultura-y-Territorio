@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloquio: Palabra, Cultura y Territorio | UNAL Sede Amazonía</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        poster: {
+                            gold: '#FACC15',
+                            yellow: '#F59E0B',
+                            terracotta: '#B83B1D',
+                            terracottaDark: '#8A2912',
+                            darkBg: '#12100E',
+                            cardBg: '#1E1B18',
+                            cardBorder: '#38322C'
+                        },
+                        unal: {
+                            green: '#005528',
+                            accent: '#82c033'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .poster-hero {
+            background: linear-gradient(180deg, rgba(18, 16, 14, 0.75) 0%, rgba(18, 16, 14, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+        }
+        .g-card {
+            background: #1E1B18;
+            border: 1px solid #38322C;
+            border-radius: 12px;
+            transition: all 0.2s ease-in-out;
+        }
+        .g-card:hover {
+            border-color: #FACC15;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-poster-darkBg text-slate-200 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar Header (UNAL Branding) -->
+    <header class="bg-black/80 backdrop-blur sticky top-0 z-50 border-b border-amber-900/30 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-md bg-poster-terracotta flex items-center justify-center font-bold text-xs text-white tracking-widest border border-amber-400/30">
+                        IMANI
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-widest font-semibold text-amber-400">Universidad Nacional de Colombia</span>
+                        <span class="block text-xs font-bold leading-tight font-heading">Sede Amazonía &bull; Instituto IMANI</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-1 text-xs uppercase font-semibold tracking-wider">
+                    <a href="#inicio" class="px-3 py-2 rounded-md hover:text-poster-gold transition">Inicio</a>
+                    <a href="#territ-oralidades" class="px-3 py-2 rounded-md hover:text-poster-gold transition">Territ-oralidades</a>
+                    <a href="#programacion" class="px-3 py-2 rounded-md hover:text-poster-gold transition">Programación</a>
+                    <a href="#invitados" class="px-3 py-2 rounded-md hover:text-poster-gold transition">Invitados</a>
+                    <a href="#transmision" class="px-3 py-2 rounded-md hover:text-poster-gold transition">Transmisión y Enlaces</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-poster-gold focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-poster-darkBg border-t border-amber-900/40 px-4 pt-2 pb-4 space-y-1 text-sm font-semibold">
+            <a href="#inicio" class="block px-3 py-2 rounded-md hover:text-poster-gold">Inicio</a>
+            <a href="#territ-oralidades" class="block px-3 py-2 rounded-md hover:text-poster-gold">Territ-oralidades</a>
+            <a href="#programacion" class="block px-3 py-2 rounded-md hover:text-poster-gold">Programación</a>
+            <a href="#invitados" class="block px-3 py-2 rounded-md hover:text-poster-gold">Invitados</a>
+            <a href="#transmision" class="block px-3 py-2 rounded-md hover:text-poster-gold">Transmisión y Enlaces</a>
+        </div>
+    </header>
+
+    <!-- Main Banner Hero (Replica estética exacta de la pieza gráfica) -->
+    <section id="inicio" class="relative poster-hero text-white py-14 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-amber-900/40">
+        <div class="max-w-5xl mx-auto relative z-10">
+            
+            <!-- Badges de la Pieza Gráfica -->
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <div class="inline-flex items-center space-x-2 bg-black/60 backdrop-blur border border-amber-500/40 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide text-amber-300">
+                    <i class="fa-solid fa-award text-poster-gold"></i>
+                    <span>XXXVI Mes de la Investigación y la Extensión</span>
+                </div>
+                <div class="inline-flex items-center space-x-2 bg-black/60 backdrop-blur border border-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide text-slate-300">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>160 Años Manuel Ancízar</span>
+                </div>
+            </div>
+
+            <!-- Título Principal Exacto del Afiche -->
+            <h1 class="font-heading font-extrabold tracking-tight leading-none mb-3">
+                <span class="block text-2xl sm:text-3xl md:text-4xl text-white">Palabra, cultura y territorio:</span>
+                <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-poster-gold mt-1 font-black leading-tight drop-shadow-md">
+                    Encuentros de escucha sobre antropologías, lingüísticas y literaturas territ-orales
+                </span>
+            </h1>
+
+            <!-- Subtítulo / Datos clave afiche -->
+            <div class="mt-6 p-4 rounded-xl bg-black/70 border-l-4 border-poster-gold max-w-3xl space-y-2 text-sm sm:text-base font-medium">
+                <div class="flex flex-wrap items-center gap-y-2 gap-x-6 text-amber-100">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-regular fa-calendar text-poster-gold text-lg"></i>
+                        <span><strong>13 de noviembre a 4 diciembre / 2026</strong></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-regular fa-clock text-poster-gold text-lg"></i>
+                        <span>Los viernes de 8:00 a 11:00 am</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-poster-gold text-lg"></i>
+                        <span>Aula 5C / UNAL Sede Amazonia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enlaces directos exactos del afiche -->
+            <div class="mt-8 flex flex-wrap gap-4 items-center">
+                <a href="https://meet.google.com/shg-uehu-yjr" target="_blank" rel="noopener" class="inline-flex items-center space-x-3 bg-white hover:bg-slate-100 text-slate-900 font-bold px-5 py-3 rounded-xl transition shadow-lg text-sm border border-slate-300">
+                    <div class="flex space-x-0.5">
+                        <span class="w-2.5 h-2.5 bg-blue-500 rounded-full"></span>
+                        <span class="w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+                        <span class="w-2.5 h-2.5 bg-yellow-500 rounded-full"></span>
+                        <span class="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+                    </div>
+                    <span class="underline">https://meet.google.com/shg-uehu-yjr</span>
+                </a>
+
+                <a href="https://youtube.com/@universidadnacionaldecolom6730?si=QROMtcj_rz3T_XJP" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white font-bold px-5 py-3 rounded-xl transition shadow-lg text-sm">
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                    <span>Canal UNAL YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-14">
+
+        <!-- Lista Rapida de Invitados (Visual estilo columna de la imagen) -->
+        <section class="g-card p-6 md:p-8 bg-gradient-to-r from-poster-cardBg via-poster-cardBg to-black">
+            <h2 class="text-xs font-bold text-poster-gold uppercase tracking-widest mb-4 flex items-center">
+                <i class="fa-solid fa-users mr-2"></i> Invitados destacados del coloquio
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-sm font-semibold text-slate-200">
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Diego Fabián Arévalo Viveros</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Elio Miraña</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Geny Gonzales Castaño</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>David Felipe Guerrero Beltrán</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Abel Santos</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Nurys Silva</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Cristian Uribe</span>
+                </div>
+                <div class="flex items-center space-x-2 p-2 rounded bg-black/40 border border-amber-900/30">
+                    <span class="w-2 h-2 rounded-full bg-poster-gold"></span>
+                    <span>Gustavo Adolfo Zuluaga Hoyos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Presentación y Territ-oralidades -->
+        <section id="territ-oralidades" class="grid md:grid-cols-3 gap-8 items-start">
+            <div class="md:col-span-2 g-card p-6 md:p-8 space-y-4">
+                <div class="flex items-center space-x-3 mb-2">
+                    <div class="w-10 h-10 rounded-lg bg-poster-terracotta text-white flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold font-heading text-white">Sobre el Coloquio</h2>
+                </div>
+                <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                    En los últimos años, desde los espacios de conversación sobre la palabra y la preservación de la memoria, el concepto de <strong class="text-poster-gold">territ-oralidades</strong> ha surgido y se ha fermentado para pensar en las lenguas y las expresiones lingüísticas como múltiples formas de habitar el mundo, transmitir memorias, compartir conocimientos y mantener vivas las relaciones que nos vinculan con otras personas para formar un tejido.
+                </p>
+                <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                    Desde esta perspectiva, la palabra no está separada de la vida ni el conocimiento se produce de manera aislada: ambos germinan en encuentros, recorridos, conversaciones y experiencias compartidas que conforman uno y múltiples territorios.
+                </p>
+                <div class="bg-black/60 border-l-4 border-poster-terracotta p-4 rounded-r-lg mt-4">
+                    <p class="text-xs font-bold text-poster-gold uppercase tracking-wider mb-1">Enfoque de escucha</p>
+                    <p class="text-slate-200 text-sm italic">
+                        "Las territ-oralidades nombran las redes vivas que se tejen entre personas (humanas y no humanas), lenguas, saberes y territorios, y que se nutren cada vez que volvemos a escucharnos."
+                    </p>
+                </div>
+            </div>
+
+            <div class="g-card p-6 space-y-4 bg-black/40">
+                <h3 class="text-lg font-bold font-heading text-poster-gold border-b border-amber-900/40 pb-2">
+                    <i class="fa-solid fa-circle-info mr-2"></i>Marco Institucional
+                </h3>
+                <div class="space-y-3 text-xs text-slate-300">
+                    <div>
+                        <span class="font-bold text-white block">Organiza:</span>
+                        <span>Instituto Amazónico de Investigaciones (IMANI) — UNAL Sede Amazonía.</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-white block">Marco General:</span>
+                        <span>XXXVI Mes de la Investigación y de la Extensión 2026.</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-white block">Redes y Aliados:</span>
+                        <span>Cátedra de Paz UNAL & Laboratorio de Lenguas y Diálogo Simétrico.</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-amber-900/40">
+                    <button onclick="downloadICS()" class="w-full bg-poster-terracotta hover:bg-poster-terracottaDark text-white font-semibold py-2.5 px-4 rounded-lg transition text-xs flex items-center justify-center space-x-2 shadow">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        <span>Agregar al Google / Outlook Calendar</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Programación / Agenda -->
+        <section id="programacion" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-amber-900/40 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold font-heading text-white">Programación de Sesiones</h2>
+                    <p class="text-sm text-amber-200/80">Agenda detallada de las 4 sesiones + Apertura en Maloca</p>
+                </div>
+                
+                <!-- Quick Filter Tabs -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterAgenda('all')" class="agenda-tab active bg-poster-gold text-slate-950 px-3.5 py-1.5 rounded-full transition">Todas</button>
+                    <button onclick="filterAgenda('preliminar')" class="agenda-tab bg-black/60 text-slate-300 border border-amber-900/40 hover:bg-black px-3.5 py-1.5 rounded-full transition">Preliminar (12 Nov)</button>
+                    <button onclick="filterAgenda('s1')" class="agenda-tab bg-black/60 text-slate-300 border border-amber-900/40 hover:bg-black px-3.5 py-1.5 rounded-full transition">Sesión 1 (13 Nov)</button>
+                    <button onclick="filterAgenda('s2')" class="agenda-tab bg-black/60 text-slate-300 border border-amber-900/40 hover:bg-black px-3.5 py-1.5 rounded-full transition">Sesión 2 (20 Nov)</button>
+                    <button onclick="filterAgenda('s3')" class="agenda-tab bg-black/60 text-slate-300 border border-amber-900/40 hover:bg-black px-3.5 py-1.5 rounded-full transition">Sesión 3 (27 Nov)</button>
+                    <button onclick="filterAgenda('s4')" class="agenda-tab bg-black/60 text-slate-300 border border-amber-900/40 hover:bg-black px-3.5 py-1.5 rounded-full transition">Sesión 4 (04 Dic)</button>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+
+                <!-- Sesión Preliminar -->
+                <div class="agenda-card g-card overflow-hidden border-l-4 border-amber-500" data-session="preliminar">
+                    <div class="bg-amber-950/40 p-4 border-b border-amber-900/40 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-amber-500 text-black font-extrabold text-xs uppercase px-2.5 py-1 rounded">Sesión Especial Preliminar</span>
+                            <span class="font-bold text-white"><i class="fa-regular fa-calendar mr-1 text-poster-gold"></i> Jueves, 12 de Noviembre de 2026</span>
+                        </div>
+                        <div class="text-xs font-semibold text-amber-200 flex items-center bg-black/60 px-3 py-1 rounded border border-amber-500/30">
+                            <i class="fa-solid fa-location-dot text-poster-gold mr-1.5"></i> Maloca Casa Hija – UNAL Amazonía
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-3">
+                            <span class="text-xs font-bold text-amber-300 bg-amber-900/50 px-2.5 py-1 rounded border border-amber-500/30">En articulación con la Cátedra de Paz UNAL</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Encuentro de escucha con Abuelos Tradicionales</h3>
+                        <p class="text-sm text-slate-300 mb-4">Apertura ceremonial sobre memoria, palabra viva y territorialidades ancestrales.</p>
+                        
+                        <div class="bg-black/50 p-4 rounded-lg border border-amber-900/40">
+                            <span class="text-xs font-bold text-poster-gold uppercase block mb-1">Participantes:</span>
+                            <p class="text-xs text-slate-300 leading-relaxed font-medium">
+                                Abuelos Trancito Rodríguez Anuto, Jesús Buinaje Jidiyama, William Yucuna Tanimuca, Bonifacio Aga Calderón, María Flor Zafirekudo Atama, Silvestre Teteye Eimenekene y Abel Santos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sesión 1 -->
+                <div class="agenda-card g-card overflow-hidden border-l-4 border-poster-gold" data-session="s1">
+                    <div class="bg-black/60 p-4 border-b border-amber-900/40 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-poster-gold text-black font-extrabold text-xs uppercase px-2.5 py-1 rounded">Sesión 1</span>
+                            <span class="font-bold text-white"><i class="fa-regular fa-calendar mr-1 text-poster-gold"></i> Viernes, 13 de Noviembre de 2026</span>
+                        </div>
+                        <div class="text-xs font-semibold text-amber-200 flex items-center bg-black/60 px-3 py-1 rounded border border-amber-500/30">
+                            <i class="fa-solid fa-location-dot text-poster-gold mr-1.5"></i> Auditorio – UNAL Amazonía
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-amber-900/30">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                8:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Sobre la territ-oralidad — Conversatorio de Apertura</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Geny González, David Guerrero y asistentes</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                9:30 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Poesía, lenguaje y territorio en el contexto de la oralidad Murui</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Gustavo Adolfo Zuluaga Hoyos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sesión 2 -->
+                <div class="agenda-card g-card overflow-hidden border-l-4 border-poster-gold" data-session="s2">
+                    <div class="bg-black/60 p-4 border-b border-amber-900/40 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-poster-gold text-black font-extrabold text-xs uppercase px-2.5 py-1 rounded">Sesión 2</span>
+                            <span class="font-bold text-white"><i class="fa-regular fa-calendar mr-1 text-poster-gold"></i> Viernes, 20 de Noviembre de 2026</span>
+                        </div>
+                        <div class="text-xs font-semibold text-amber-200 flex items-center bg-black/60 px-3 py-1 rounded border border-amber-500/30">
+                            <i class="fa-solid fa-location-dot text-poster-gold mr-1.5"></i> Salón 5C – UNAL Amazonía
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-amber-900/30">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                8:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">El contacto lingüístico en el Noroccidente amazónico a través de los demostrativos</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> David Felipe Guerrero Beltrán</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                9:30 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Leer las señas: conocimientos de la selva y persistencia cultural del pueblo Carijona</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Nurys Silva</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sesión 3 -->
+                <div class="agenda-card g-card overflow-hidden border-l-4 border-poster-gold" data-session="s3">
+                    <div class="bg-black/60 p-4 border-b border-amber-900/40 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-poster-gold text-black font-extrabold text-xs uppercase px-2.5 py-1 rounded">Sesión 3</span>
+                            <span class="font-bold text-white"><i class="fa-regular fa-calendar mr-1 text-poster-gold"></i> Viernes, 27 de Noviembre de 2026</span>
+                        </div>
+                        <div class="text-xs font-semibold text-amber-200 flex items-center bg-black/60 px-3 py-1 rounded border border-amber-500/30">
+                            <i class="fa-solid fa-location-dot text-poster-gold mr-1.5"></i> Salón 5C – UNAL Amazonía
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-amber-900/30">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                8:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Introducción: ¿Por qué es especial el Suroccidente Colombiano?</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-chalkboard-user mr-1"></i> Panel del Suroccidente</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-amber-900/30">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                9:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Documentación y revitalización de la lengua namtrik (barbacoa)</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Geny Gonzales Castaño</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                10:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Procesos sociolingüísticos y educación comunitaria en lenguas nativas</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Cristian Uribe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sesión 4 -->
+                <div class="agenda-card g-card overflow-hidden border-l-4 border-poster-gold" data-session="s4">
+                    <div class="bg-black/60 p-4 border-b border-amber-900/40 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-poster-gold text-black font-extrabold text-xs uppercase px-2.5 py-1 rounded">Sesión 4</span>
+                            <span class="font-bold text-white"><i class="fa-regular fa-calendar mr-1 text-poster-gold"></i> Viernes, 04 de Diciembre de 2026</span>
+                        </div>
+                        <div class="text-xs font-semibold text-amber-200 flex items-center bg-black/60 px-3 py-1 rounded border border-amber-500/30">
+                            <i class="fa-solid fa-location-dot text-poster-gold mr-1.5"></i> Aula TIC 2 – UNAL Amazonía
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-amber-900/30">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                8:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Hidrosemántica, revitalización y canto tradicional Miraña</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Diego Fabián Arévalo Viveros & Elio Miraña</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="sm:w-28 flex-shrink-0 text-xs font-bold text-black bg-poster-gold h-fit p-1.5 rounded text-center">
+                                9:00 AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">La oralidad entre la gente Magütá: lengua y cultura</h4>
+                                <p class="text-xs text-amber-200/80 mt-1"><i class="fa-solid fa-user-pen mr-1"></i> Abel Santos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Invitados e Investigadores -->
+        <section id="invitados" class="space-y-6">
+            <div class="border-b border-amber-900/40 pb-4">
+                <h2 class="text-2xl font-bold font-heading text-white">Semblanzas de los Invitados</h2>
+                <p class="text-sm text-amber-200/80">Trayectoria de los sabedores e investigadores participantes</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Diego Arévalo -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Diego Fabián Arévalo Viveros</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Docente e Investigador — UNAL Sede Amazonía</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                DA
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Doctor en Lenguas y Literaturas Hispánicas por UC Berkeley. Magíster en Literatura (UniAndes) y Filología Hispánica (CSIC). Investiga literatura, oralidades, pedagogía, nuevos materialismos e hidrosemántica para la revitalización de cantos y narraciones en la comunidad Miraña.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Elio Miraña -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Elio Miraña</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Investigador y Sabedor del Pueblo Miraña</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                EM
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Investigador y sabedor con formación en etnografía y lenguas nativas. Vinculado al Laboratorio de Lenguas y Diálogo Simétrico de la UNAL Amazonía y documentador etnolingüístico en el Instituto Caro y Cuervo. Su trabajo enfoca la salvaguarda de la cultura y lengua Miraña.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Geny Gonzales -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Geny Gonzales Castaño</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Profesora — UNAL Bogotá / Univ. del Cauca</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                GG
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Antropóloga y Doctora en Ciencias del Lenguaje por la Université Lumière Lyon 2 (Francia). Docente del Departamento de Lingüística de la Universidad Nacional de Colombia (Sede Bogotá) e investigadora de estudios socioculturales del suroccidente colombiano.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- David Felipe Guerrero -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">David Felipe Guerrero Beltrán</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Docente e Investigador — UNAL Sede Amazonía</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                DG
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Doctor en Lingüística por la Universidad Paris Cité y la Universidad de Melbourne. Con estancias posdoctorales en Oxford, Colonia y la ENS de Francia. Docente en la UNAL Amazonía especializado en documentación de lenguas amazónicas y australianas.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Abel Santos -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Abel Santos</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Sabedor Mayor y Lingüista Magütá</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                AS
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Profesor, sabedor mayor y Doctor en Estudios Amazónicos de la UNAL. Originario de la comunidad Arara. Fundador del Museo Etnográfico Magütá en el Resguardo Mocagua para salvaguardar la memoria y líder de asociaciones indígenas del trapecio amazónico.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Nurys Silva -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Nurys Silva</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Investigadora — ICANH</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                NS
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Antropóloga y Doctora en Etnobiología y Estudios Bioculturales por la Universidad del Cauca. Investigadora del Instituto Colombiano de Antropología e Historia (ICANH), enfocada en relaciones naturaleza-cultura y gestión participativa en Andes y Amazonia.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Cristian Uribe -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Cristian Uribe</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Docente UNAL / Líder Lenguas Nativas (MEN)</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                CU
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Lingüista y Magíster en Lingüística de la UNAL. Líder del componente de Lenguas Nativas en el Ministerio de Educación Nacional. Especialista en sociolingüística y acompañamiento de programas de educación comunitaria con pueblos Nasa, Awá e Inga.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Gustavo Zuluaga -->
+                <div class="g-card p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Gustavo Adolfo Zuluaga Hoyos</h3>
+                                <p class="text-xs text-poster-gold font-semibold">Docente e Investigador — UNAL Sede Amazonía</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-poster-terracotta text-white flex items-center justify-center font-bold text-xs border border-amber-400/40">
+                                GZ
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 line-clamp-3 bio-text leading-relaxed">
+                            Filósofo y Doctor en Letras por la Universidade Estadual de Londrina (Brasil). Docente de la UNAL Amazonía especialista en tradicología, literatura indígena y oralidades Murui-Muina (Uitoto) del interflujo Caquetá-Putumayo.
+                        </p>
+                    </div>
+                    <button onclick="toggleBio(this)" class="mt-4 text-xs font-semibold text-poster-gold hover:underline text-left inline-flex items-center">
+                        <span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Ubicación y Transmisión Virtual -->
+        <section id="transmision" class="g-card p-6 md:p-8 space-y-6">
+            <div class="border-b border-amber-900/40 pb-4">
+                <h2 class="text-2xl font-bold font-heading text-white">Enlaces de Transmisión</h2>
+                <p class="text-sm text-amber-200/80">Acceso a las salas virtuales oficiales</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-5 bg-black/60 rounded-xl border border-amber-900/40 space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-video text-2xl text-red-500"></i>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Google Meet</h4>
+                            <p class="text-xs text-slate-400">Sala principal de interacción</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono bg-black p-2 rounded border border-slate-800 break-all">
+                        https://meet.google.com/shg-uehu-yjr
+                    </p>
+                    <a href="https://meet.google.com/shg-uehu-yjr" target="_blank" rel="noopener" class="inline-block w-full text-center bg-white hover:bg-slate-200 text-slate-950 font-bold text-xs py-2.5 rounded-lg transition">
+                        Entrar a Google Meet <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="p-5 bg-black/60 rounded-xl border border-amber-900/40 space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-brands fa-youtube text-2xl text-red-600"></i>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Canal YouTube UNAL</h4>
+                            <p class="text-xs text-slate-400">Transmisión oficial en vivo</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono bg-black p-2 rounded border border-slate-800 break-all">
+                        https://youtube.com/@universidadnacionaldecolom6730
+                    </p>
+                    <a href="https://youtube.com/@universidadnacionaldecolom6730?si=QROMtcj_rz3T_XJP" target="_blank" rel="noopener" class="inline-block w-full text-center bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-2.5 rounded-lg transition">
+                        Ver Transmisión en YouTube <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Franja Inferior Institucional (Copia idéntica del Footer del Afiche) -->
+    <footer class="bg-poster-terracotta text-white py-8 border-t border-amber-500/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-6 pb-6 border-b border-amber-400/30">
+                
+                <!-- Logo IMANI -->
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl font-black font-heading tracking-tighter text-white">imani</span>
+                    <div class="text-[10px] leading-tight font-semibold uppercase text-amber-200 border-l border-amber-300/40 pl-2">
+                        Instituto Amazónico de<br>Investigaciones IMANI
+                    </div>
+                </div>
+
+                <!-- Amazonia UNAL -->
+                <div class="flex items-center space-x-2 font-heading">
+                    <span class="text-lg font-bold text-white">Amazonia</span>
+                    <span class="bg-white text-poster-terracotta font-black text-xs px-2 py-0.5 rounded">UNAL</span>
+                </div>
+
+                <!-- Universidad Nacional de Colombia -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center font-bold text-[10px]">
+                        UN
+                    </div>
+                    <div class="text-[11px] font-bold uppercase tracking-wider text-white">
+                        Universidad<br>Nacional<br>de Colombia
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-amber-100/80 gap-2">
+                <p>&copy; 2026 Universidad Nacional de Colombia &bull; Sede Amazonía</p>
+                <p>XXXVI Mes de la Investigación y la Extensión &bull; 160 Años Manuel Ancízar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Toggle Mobile Menu Navigation
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter Agenda Sessions
+        function filterAgenda(sessionKey) {
+            const cards = document.querySelectorAll('.agenda-card');
+            const tabs = document.querySelectorAll('.agenda-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-poster-gold', 'text-slate-950');
+                tab.classList.add('bg-black/60', 'text-slate-300');
+            });
+
+            event.currentTarget.classList.remove('bg-black/60', 'text-slate-300');
+            event.currentTarget.classList.add('bg-poster-gold', 'text-slate-950');
+
+            cards.forEach(card => {
+                if (sessionKey === 'all' || card.dataset.session === sessionKey) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Toggle Full Bio Cards
+        function toggleBio(button) {
+            const bioText = button.previousElementSibling.querySelector('.bio-text');
+            const isExpanded = bioText.classList.contains('line-clamp-none');
+
+            if (isExpanded) {
+                bioText.classList.add('line-clamp-3');
+                bioText.classList.remove('line-clamp-none');
+                button.innerHTML = '<span>Leer biografía completa</span> <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>';
+            } else {
+                bioText.classList.remove('line-clamp-3');
+                bioText.classList.add('line-clamp-none');
+                button.innerHTML = '<span>Mostrar menos</span> <i class="fa-solid fa-chevron-up ml-1 text-[10px]"></i>';
+            }
+        }
+
+        // Dynamic ICS File Generation for Google / Outlook Calendar
+        function downloadICS() {
+            const icsData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UNAL Amazonia//Coloquio Palabra Cultura Territorio//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:Coloquio: Palabra, cultura y territorio - Sesión 1
+DESCRIPTION:Conversatorio de apertura sobre territ-oralidad y Poesía Murui.
+LOCATION:Auditorio UNAL Sede Amazonia
+DTSTART:20261113T130000Z
+DTEND:20261113T160000Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Coloquio: Palabra, cultura y territorio - Sesión 2
+DESCRIPTION:Contacto lingüístico en Noroccidente amazónico y pueblo Carijona.
+LOCATION:Salón 5C UNAL Sede Amazonia
+DTSTART:20261120T130000Z
+DTEND:20261120T160000Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Coloquio: Palabra, cultura y territorio - Sesión 3
+DESCRIPTION:Documentación y revitalización de la lengua namtrik y sociolingüística.
+LOCATION:Salón 5C UNAL Sede Amazonia
+DTSTART:20261127T130000Z
+DTEND:20261127T160000Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Coloquio: Palabra, cultura y territorio - Sesión 4
+DESCRIPTION:Hidrosemántica Miraña y oralidad Magütá.
+LOCATION:Aula TIC 2 UNAL Sede Amazonia
+DTSTART:20261204T130000Z
+DTEND:20261204T160000Z
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Coloquio_Palabra_Cultura_Territorio_2026.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
